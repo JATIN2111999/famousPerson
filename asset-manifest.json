@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/famousPerson/static/css/main.06738c3e.css",
+    "main.js": "/famousPerson/static/js/main.6ab6ee60.js",
+    "static/js/787.5f4fa8e0.chunk.js": "/famousPerson/static/js/787.5f4fa8e0.chunk.js",
+    "index.html": "/famousPerson/index.html",
+    "main.06738c3e.css.map": "/famousPerson/static/css/main.06738c3e.css.map",
+    "main.6ab6ee60.js.map": "/famousPerson/static/js/main.6ab6ee60.js.map",
+    "787.5f4fa8e0.chunk.js.map": "/famousPerson/static/js/787.5f4fa8e0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06738c3e.css",
+    "static/js/main.6ab6ee60.js"
+  ]
+}
