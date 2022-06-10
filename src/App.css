@@ -32,7 +32,51 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.collapsible li.active .collapsible-header i {
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}
+
+.collapsible-header {
+  justify-content: space-between;
+}
+
+.collapsible-header .personname {
+  flex-grow: 1;
+  text-align: left;
+  margin: auto 20px;
+  font-size: large;
+}
+
+.collapsible-body {
+  text-align: left;
+}
+
+.editicons .edit {
+  margin: 0 10px 0 10px;
+  color: rgb(53, 53, 248);
+}
+
+.editicons  .delete {
+  margin: 0 10px 0 10px;
+  color: red;
+}
+
+.space{
+  height: 1rem;
+  width: 100%;
+}
+
+.material-icons{
+  cursor: pointer;
 }
