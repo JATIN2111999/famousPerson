@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { DataTypeWithAge, GenderTypes } from '../types';
+import { DataTypeWithAge, DispatchEditPerson, GenderTypes, VoidFunctionType } from '../types';
 
-function EditCard({ person, setEditPerson, getGender, updatePerson }: { person: DataTypeWithAge, setEditPerson: React.Dispatch<React.SetStateAction<DataTypeWithAge | undefined>>, getGender: (x: string) => GenderTypes, updatePerson: () => void }) {
+function EditCard({ person, setEditPerson, getGender, updatePerson }: { person: DataTypeWithAge, setEditPerson: DispatchEditPerson, getGender: (x: string) => GenderTypes, updatePerson: VoidFunctionType }) {
 
     useEffect(() => {
-        var elemsselect = document.querySelectorAll('select');
+        let elemsselect = document.querySelectorAll('select');
         M.FormSelect.init(elemsselect)
     }, [])
 
@@ -13,14 +13,14 @@ function EditCard({ person, setEditPerson, getGender, updatePerson }: { person: 
 
             <div className="input-field col s4">
                 <div className='grey-text '>Age</div> <br />
-                <input type="number" value={person.age} name="age" onChange={(e) =>  setEditPerson({ ...person, [e.target.name]: e.target.value })} />
+                <input type="number" value={person.age} name="age" onChange={(e) => setEditPerson({ ...person, [e.target.name]: e.target.value })} />
             </div>
             <div className="col s4">
                 <div className='grey-text '>Gender</div> <br />
                 <div className="input-field col s12">
                     <select onChange={(e) => setEditPerson({ ...person, 'gender': getGender(e.target.value) })} value={person.gender}>
                         {Object.keys(GenderTypes).map((key) => {
-                            
+
                             return (
                                 <option value={key} key={key}>{key}</option>
                             )
@@ -30,7 +30,7 @@ function EditCard({ person, setEditPerson, getGender, updatePerson }: { person: 
             </div>
             <div className="input-field col s4">
                 <div className='grey-text '>Country</div> <br />
-                <input type="text" value={person.country} name="country"  onChange={(e: any) => setEditPerson({ ...person, [e.target.name]: e.target.value })} />
+                <input type="text" value={person.country} name="country" onChange={(e: any) => setEditPerson({ ...person, [e.target.name]: e.target.value })} />
             </div>
             <br />
             <div className='grey-text left ' style={{ margin: '10px 0 10px 0' }}> Description</div> <br /><br /><br />

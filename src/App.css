@@ -52,10 +52,14 @@
 }
 
 .collapsible-header .personname {
-  flex-grow: 1;
+  flex: 1;
   text-align: left;
   margin: auto 20px;
   font-size: large;
+}
+
+.collapsible-header .right{
+  margin: auto 0;
 }
 
 .collapsible-body {

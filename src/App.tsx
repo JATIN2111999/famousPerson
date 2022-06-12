@@ -11,15 +11,14 @@ function App() {
   const [data, setdata] = useState<DataTypeWithAge[]>([])
   const [editPerson, setEditPerson] = useState<DataTypeWithAge | undefined>()
   useEffect(() => {
-
-    var elems = document.querySelectorAll('.collapsible');
+    // materlize init 
+    let elems = document.querySelectorAll('.collapsible');
     M.Collapsible.init(elems)
-    var elemsmodal = document.querySelectorAll('.modal');
+    let elemsmodal = document.querySelectorAll('.modal');
     M.Modal.init(elemsmodal)
 
 
     const newuserdata: DataTypeWithAge[] = []
-
     UserData.forEach((val) => {
       newuserdata.push({
         ...val,
@@ -83,10 +82,9 @@ function App() {
 
   return (
     <div className="App container">
-
-
       <br /><br /><br />
       <ul className="collapsible" data-collapsible="accordion">
+        {/* render user data if data is fetched from json */}
         {data && data.map((item) => {
           if (editPerson && item.id === editPerson?.id) {
             return (
@@ -96,7 +94,7 @@ function App() {
                   <div className='personname'>
                     <input type="text" value={editPerson.first} name="first" onChange={(e) => setEditPerson({ ...editPerson, [e.target.name]: e.target.value })} />
                   </div>
-                  <i className="material-icons right" style={{ margin: "auto 0" }}>expand_more</i></div>
+                  <i className="material-icons right">expand_more</i></div>
                 <div className="collapsible-body"><span><EditCard person={editPerson} setEditPerson={setEditPerson} getGender={getGender} updatePerson={updatePerson} /></span></div>
               </li>
             )
@@ -109,12 +107,11 @@ function App() {
                 <div className='personname'>
                   {item.first}
                 </div>
-                <i className="material-icons right" style={{ margin: "auto 0" }}>expand_more</i></div>
+                <i className="material-icons right">expand_more</i></div>
               {/* don't render in edit mode */}
               {editPerson === undefined && <div className="collapsible-body"><span><Cards person={item} delPerson={delPerson} setEditPerson={setEditPerson} /></span></div>}
             </li>
           )
-
 
         })}
       </ul>

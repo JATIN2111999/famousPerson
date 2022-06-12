@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { DataTypeWithAge } from '../types';
-function Cards({ person, delPerson, setEditPerson }: { person: DataTypeWithAge, delPerson: (id: number) => void, setEditPerson: React.Dispatch<React.SetStateAction<DataTypeWithAge | undefined>> }) {
+import { DataTypeWithAge, DispatchEditPerson, VoidFunctionIntType } from '../types';
+function Cards({ person, delPerson, setEditPerson }: { person: DataTypeWithAge, delPerson: VoidFunctionIntType, setEditPerson: DispatchEditPerson }) {
     const [delthis, setDelthis] = useState<number | undefined>()
     if (delthis) {
         return (
